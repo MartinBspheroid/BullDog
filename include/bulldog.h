@@ -22,6 +22,7 @@ public:
 	~BullDog(){};
 	void watch(fs::path p, std::function<void()> callback) {
 		if(fs::exists(p))list.emplace_back(last_write_time(p), p, callback);
+		callback();
 	}
 
 	void check(){
