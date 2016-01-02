@@ -18,9 +18,14 @@ struct wFile
 class BullDog
 {
 public:
-	BullDog(){};
+	BullDog(){ bInit = false; };
 	~BullDog(){};
+
+	void disconnectUpdateSignal(){
+		updateConection.disconnect();
+	}
 	void watch(const fs::path &p, std::function<void()> callback) {
+		if (!bInit) setUpdate();
 		if(fs::exists(p)) list.emplace_back(last_write_time(p), p, callback);
 		callback();
 	}
@@ -43,6 +48,10 @@ public:
 	}
 private:
 	vector<wFile> list;
+	bool bInit;
+	signals::Connection updateConection;
+	void setUpdate(){
+		updateConection = app::getWindow()->getSignalPostDraw().connect([=] {check(); });
+		bInit = true;
+	}
 };
-
-
