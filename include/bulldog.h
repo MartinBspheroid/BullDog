@@ -20,9 +20,14 @@ class BullDog
 public:
 	BullDog(){};
 	~BullDog(){};
-	void watch(fs::path p, std::function<void()> callback) {
-		if(fs::exists(p))list.emplace_back(last_write_time(p), p, callback);
+	void watch(const fs::path &p, std::function<void()> callback) {
+		if(fs::exists(p)) list.emplace_back(last_write_time(p), p, callback);
 		callback();
+	}
+	void watch(const std::vector<fs::path> &fileList, std::function<void()> callback){
+		for (auto &f : fileList){
+			watch(f, callback);
+		}
 	}
 
 	void check(){
