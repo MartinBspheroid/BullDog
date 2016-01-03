@@ -1,0 +1,20 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BullDogSimple", "BullDogSimple.vcxproj", "{A82F8590-4B2B-4FB1-93CD-79C3922AEB7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A82F8590-4B2B-4FB1-93CD-79C3922AEB7E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A82F8590-4B2B-4FB1-93CD-79C3922AEB7E}.Debug|Win32.Build.0 = Debug|Win32
+		{A82F8590-4B2B-4FB1-93CD-79C3922AEB7E}.Release|Win32.ActiveCfg = Release|Win32
+		{A82F8590-4B2B-4FB1-93CD-79C3922AEB7E}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
